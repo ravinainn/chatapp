@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import io from "socket.io-client";
 
 const socket = io("https://chatapp-8get.onrender.com");
+// const socket = io("http://localhost:8080");
 
 function ChatRoom() {
   const { roomId } = useParams();
