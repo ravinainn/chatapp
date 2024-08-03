@@ -74,16 +74,14 @@ function ChatRoom() {
 
   return (
     <div className="flex h-screen bg-gray-100">
-      <div className="w-1/4 p-4 bg-white border-r border-gray-200">
-        <h2 className="mb-4 text-xl font-semibold text-gray-800">
-          Room: {roomId}
-        </h2>
-        <h3 className="mb-2 text-lg font-medium text-gray-700">
-          Users in room:
+      <div className="w-60 p-4  border-r border-gray-200">
+        <h2 className="mb-8  text-xl font-semibold text-gray-900">{roomId}</h2>
+        <h3 className="mb-2 text-base font-semibold text-gray-700">
+          ACTIVE USERS:
         </h3>
         <ul className="space-y-1">
           {users.map(([userId, userName]) => (
-            <li key={userId} className="text-gray-600">
+            <li key={userId} className="text-gray-600 pl-2">
               {userName}
             </li>
           ))}
@@ -95,22 +93,22 @@ function ChatRoom() {
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
               placeholder="Set your name"
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-3/5 border bg-transparent border-slate-800 p-2 rounded rounded-e-none focus:outline-none"
             />
             <button
               type="submit"
-              className="w-full px-4 py-2 mt-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="border font-semibold text-l bg-slate-100 text-color1 border-slate-800 py-2 px-4 rounded rounded-s-none"
             >
-              Set Name
+              Set
             </button>
           </form>
         )}
       </div>
-      <div className="flex flex-col w-3/4">
+      <div className="flex-1 flex flex-col bg-white">
         <div ref={messageContainerRef} className="flex-1 p-4 overflow-y-auto">
           {messages.map((msg, index) => (
             <div key={index} className="mb-2">
-              <span className="font-semibold text-blue-600">
+              <span className="font-semibold text-slate-800">
                 {msg.userName || "Anonymous"}:{" "}
               </span>
               <span className="text-gray-800">{msg.message}</span>
@@ -120,20 +118,17 @@ function ChatRoom() {
             </div>
           ))}
         </div>
-        <form
-          onSubmit={sendMessage}
-          className="flex p-4 bg-white border-t border-gray-200"
-        >
+        <form onSubmit={sendMessage} className="flex p-4 ">
           <input
             type="text"
             value={inputMessage}
             onChange={(e) => setInputMessage(e.target.value)}
             placeholder="Type a message"
-            className="flex-1 px-4 py-2 mr-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="flex-1 border bg-transparent border-slate-800 p-2 rounded rounded-e-none focus:outline-none"
           />
           <button
             type="submit"
-            className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="px-8 border font-semibold text-lg bg-slate-100 text-color1 border-slate-800 p-2 rounded rounded-s-none hover:bg-color1 hover:text-white "
           >
             Send
           </button>
