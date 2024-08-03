@@ -75,7 +75,9 @@ function ChatRoom() {
   return (
     <div className="flex h-screen bg-gray-100">
       <div className="w-60 p-4  border-r border-gray-200">
-        <h2 className="mb-8  text-xl font-semibold text-gray-900">{roomId}</h2>
+        <h2 className="mb-8  text-xl font-semibold text-gray-900">
+          Room: {roomId}
+        </h2>
         <h3 className="mb-2 text-base font-semibold text-gray-700">
           ACTIVE USERS:
         </h3>
