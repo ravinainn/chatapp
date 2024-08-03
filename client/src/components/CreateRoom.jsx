@@ -13,7 +13,7 @@ function CreateRoom() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
+    <div className="h-screen flex items-center justify-center p-4">
       <div>
         <h1 className="text-4xl sm:text-6xl font-bold text-center mb-2">
           DONTCHAT

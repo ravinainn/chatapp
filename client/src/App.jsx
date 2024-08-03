@@ -6,12 +6,10 @@ import ChatRoom from "./components/ChatRoom";
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-100">
-        <Routes>
-          <Route path="/" element={<CreateRoom />} />
-          <Route path="/:roomId" element={<ChatRoom />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<CreateRoom />} />
+        <Route path="/:roomId" element={<ChatRoom />} />
+      </Routes>
     </Router>
   );
 }
